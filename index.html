@@ -1,307 +1,148 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#fbf7ee" />
-  <meta name="description" content="Millicent Exim supplies premium Indian rice, wheat, pulses, lentils and staple agro commodities to global buyers." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7ee">
+  <meta name="description" content="Millicent Exim supplies premium Indian rice, wheat, pulses, lentils and staple agro commodities to global buyers.">
   <title>Millicent Exim | Indian Agro Commodities</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ivory:#fbf7ee;
-      --ivory-2:#f7f0e4;
-      --ink:#11100e;
-      --brown:#704820;
-      --gold:#b57d28;
-      --gold-2:#d4ae68;
-      --navy:#041c30;
-      --line:#d9cbbb;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--ivory)}
-    body{margin:0;background:var(--ivory);color:var(--ink);font-family:Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    button{font:inherit}
-
-    /* DESKTOP / TABLET: the approved visual itself is the rendering source.
-       At the reference 941px viewport this is pixel-identical except for the corrected map. */
-    .desktop-reference{display:block;width:100%;background:#fbf7ee}
-    .reference-stage{position:relative;width:100%;max-width:1440px;margin:0 auto;line-height:0;overflow:hidden;background:#fbf7ee}
-    .reference-stage>.approved-design{width:100%;height:auto;display:block}
-    .map-correction{
-      position:absolute;
-      left:36.2%;
-      top:71.77%;
-      width:47.1%;
-      height:10.1%;
-      overflow:hidden;
-      background:#f7f1e7;
-      z-index:4;
-    }
-    .map-correction img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-
-    /* Invisible interaction layer: preserves exact pixels while keeping the visual functional. */
-    .hotspot{position:absolute;z-index:8;display:block;background:transparent;border:0;outline:0}
-    .hotspot:focus-visible{outline:2px solid #9b6e31;outline-offset:2px;border-radius:3px}
-    .nav-home{left:29.2%;top:0.9%;width:5.1%;height:2.2%}
-    .nav-cat{left:34.4%;top:.9%;width:7.1%;height:2.2%}
-    .nav-pack{left:41.7%;top:.9%;width:7.0%;height:2.2%}
-    .nav-source{left:49.0%;top:.9%;width:6.7%;height:2.2%}
-    .nav-markets{left:56.0%;top:.9%;width:6.6%;height:2.2%}
-    .nav-about{left:62.9%;top:.9%;width:5.1%;height:2.2%}
-    .nav-contact{left:68.3%;top:.9%;width:6.0%;height:2.2%}
-    .top-cta{left:81.8%;top:.6%;width:13.4%;height:2.4%}
-    .hero-cat{left:4.1%;top:17.2%;width:17.1%;height:2.3%}
-    .hero-partner{left:23.0%;top:17.2%;width:14.5%;height:2.3%}
-    .cat-link{left:81.9%;top:28.1%;width:13.8%;height:2.0%}
-    .pack-link{left:4.0%;top:54.7%;width:21.6%;height:2.5%}
-    .final-link{left:39.6%;top:88.0%;width:19.1%;height:2.5%}
-
-    /* Scroll anchors positioned to the section tops of the approved composition. */
-    .anchor{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
-    #home{top:0}
-    #categories{top:24.65%}
-    #packaging{top:42.45%}
-    #sourcing{top:58.0%}
-    #markets{top:71.0%}
-    #contact{top:82.1%}
-    #about{top:92.0%}
-
-    /* MOBILE: same approved art direction, reflowed only for legibility. */
-    .mobile-site{display:none}
-
-    @media (max-width: 760px){
-      .desktop-reference{display:none}
-      .mobile-site{display:block;background:#fbf7ee}
-      .m-wrap{width:min(100% - 28px,620px);margin:0 auto}
-      .m-header{position:sticky;top:0;z-index:30;background:rgba(251,247,238,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(217,203,187,.75)}
-      .m-nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-      .m-brand{width:158px}
-      .m-brand img{width:100%;height:auto}
-      .m-menu{width:44px;height:44px;border:1px solid #cbb99e;border-radius:10px;background:#fffaf0;display:grid;place-items:center;cursor:pointer}
-      .m-menu span,.m-menu span::before,.m-menu span::after{content:"";display:block;width:21px;height:1.6px;background:#1a1815;position:relative}
-      .m-menu span::before{position:absolute;top:-6px}
-      .m-menu span::after{position:absolute;top:6px}
-      .m-drawer{display:none;position:absolute;left:14px;right:14px;top:73px;background:#fffaf0;border:1px solid #d9cbbb;box-shadow:0 18px 50px rgba(38,28,18,.14);border-radius:14px;padding:12px}
-      .m-header.open .m-drawer{display:grid}
-      .m-drawer a{padding:12px 10px;font-size:17px;border-bottom:1px solid #eee2d2}
-      .m-drawer a:last-child{border-bottom:0}
-
-      .m-section{padding:54px 0}
-      .m-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#78502c;margin-bottom:10px}
-      .m-h1,.m-h2,.m-h3{font-family:"Playfair Display",Georgia,serif;margin:0;line-height:1.04;letter-spacing:-.025em;color:#11100e}
-      .m-h1{font-size:clamp(42px,12vw,58px)}
-      .m-h2{font-size:clamp(34px,9.2vw,47px)}
-      .m-h3{font-size:27px}
-      .m-copy{font-size:17px;line-height:1.48;color:#4f453a;margin:16px 0 0}
-      .m-btns{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
-      .m-btn{min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:5px;border:1px solid #87643b;font-size:17px;padding:12px 16px}
-      .m-btn.gold{background:linear-gradient(180deg,#dfbd7d,#c18a37);border-color:#c18a37;color:#17110b}
-      .m-btn.light{background:#fffdf8}
-      .m-hero{padding:34px 0 42px}
-      .m-hero-photo{margin:30px -14px 0;border-radius:0;overflow:hidden;background:#eee3d4}
-      .m-hero-photo img{width:100%;height:auto}
-      .m-trust{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
-      .m-trust div{display:flex;align-items:center;gap:13px;padding:12px 0;border-top:1px solid #d8cabb;font-size:16px;line-height:1.25}
-      .m-trust i{width:36px;height:36px;border:1px solid #a47a45;display:grid;place-items:center;border-radius:50%;font-style:normal;color:#805222}
-
-      .m-cats{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
-      .m-card{background:#f8f0e3;border:1px solid #ebdfce;overflow:hidden;border-radius:7px;text-align:center}
-      .m-card img{width:100%;aspect-ratio:1.25/1;object-fit:cover}
-      .m-card .body{padding:13px 16px 17px}
-      .m-card p{font-size:15.5px;line-height:1.35;margin:6px 0 0;color:#3f372f}
-
-      .m-pack{background:#031d31;color:#fff}
-      .m-pack .m-kicker{color:#d2a45b}
-      .m-pack .m-h2,.m-pack .m-copy{color:#fff}
-      .m-pack .m-copy{color:#d5deea}
-      .m-pack-row{display:flex;gap:14px;overflow-x:auto;margin:28px -14px 0;padding:0 14px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-      .m-pack-item{min-width:168px;text-align:center;scroll-snap-align:start}
-      .m-pack-item img{width:100%;height:245px;object-fit:cover;object-position:center;background:#031d31}
-      .m-pack-item strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:18px;margin-top:8px}
-      .m-pack-item small{font-size:14px;color:#d4dee8}
-      .m-pack .m-btn{margin-top:18px;background:linear-gradient(180deg,#e1bd75,#c18b38);color:#130d08;border-color:#c18b38}
-
-      .m-source-photo{margin:0 -14px 30px;position:relative}
-      .m-source-photo img{width:100%;height:auto}
-      .m-source-note{position:absolute;left:22px;bottom:20px;color:#fff;font-size:11px;line-height:1.45;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,.45)}
-      .m-pillars{display:grid;grid-template-columns:1fr;gap:0;margin-top:24px;border-top:1px solid #d9cbbb}
-      .m-pillar{padding:18px 0;border-bottom:1px solid #d9cbbb;display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start}
-      .m-pillar i{font-style:normal;font-size:25px;color:#754a1f}
-      .m-pillar strong{font-size:17px;display:block}
-      .m-pillar p{font-size:15px;line-height:1.4;margin:4px 0 0;color:#5d5349}
-
-      .m-markets{background:#f7f0e5}
-      .m-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:24px}
-      .m-stat{padding-right:8px;border-right:1px solid #cdbda8}
-      .m-stat:last-child{border-right:0}
-      .m-stat b{font-family:"Playfair Display",Georgia,serif;font-size:26px;color:#68431f;display:block;line-height:1}
-      .m-stat span{display:block;font-size:13px;line-height:1.2;margin-top:5px;color:#5b5146}
-      .m-map{margin:28px -6px 0;background:#f7f1e7}
-      .m-map img{width:100%;height:auto}
-
-      .m-cta{position:relative;background:url('assets/cta.jpg') center/cover no-repeat;padding:54px 0;color:#111;text-align:center}
-      .m-cta::before{content:"";position:absolute;inset:0;background:rgba(255,246,225,.35)}
-      .m-cta .m-wrap{position:relative;z-index:1}
-      .m-cta .m-copy{max-width:520px;margin:13px auto 0;color:#362c22}
-      .m-audience{font-size:14px;margin-top:14px}
-
-      .m-footer{background:#fffaf3;border-top:1px solid #d9cbbb;padding:32px 0 22px}
-      .m-footer-logo{width:170px;margin:0 auto}
-      .m-footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 18px;margin-top:24px;font-size:15px}
-      .m-footer-bottom{border-top:1px solid #d9cbbb;margin-top:24px;padding-top:16px;text-align:center;font-size:13px;line-height:1.6;color:#655c53}
-    }
-
-    @media (min-width:761px) and (max-width:1024px){
-      .reference-stage{max-width:none}
-    }
-
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/main.js" defer></script>
 </head>
 <body>
-  <div class="desktop-reference" aria-label="Millicent Exim approved desktop design">
-    <div class="reference-stage">
-      <img class="approved-design" src="assets/reference.png" alt="Millicent Exim premium Indian agro commodities website" />
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#home" aria-label="Millicent Exim home">
+      <img src="assets/logo.png" alt="Millicent Exim — Exporting Excellence, Worldwide!">
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="is-current" href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#packaging">Packaging</a>
+      <a href="#sourcing">Sourcing</a>
+      <a href="#markets">Markets</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="#contact">Get In Touch <span aria-hidden="true">→</span></a>
+    <button class="menu-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#home">Home</a><a href="#categories">Categories</a><a href="#packaging">Packaging</a>
+      <a href="#sourcing">Sourcing</a><a href="#markets">Markets</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#contact">Get In Touch →</a>
+    </nav>
+  </header>
 
-      <div class="map-correction" aria-label="Corrected global markets map with India accurately positioned">
-        <img src="assets/market-map-corrected.png" alt="Global trade routes originating from India" />
+  <main id="main-content">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Premium Indian Agro Commodities<br>For a Brighter Tomorrow</p>
+        <h1 id="hero-title">India’s Agro Commodities,<br>Supplied with Trust.</h1>
+        <p class="hero-description">Millicent Exim supplies rice, wheat, pulses, lentils, and staple agro commodities to global buyers with a commitment to quality, reliability, and long-term partnerships.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#categories">View Categories <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" href="#contact">Partner With Us</a>
+        </div>
+        <ul class="trust-points" aria-label="Our strengths">
+          <li><span class="trust-icon trust-leaf" aria-hidden="true">♧</span><span>Multi-Commodity<br>Export</span></li>
+          <li><span class="trust-icon trust-box" aria-hidden="true">◇</span><span>Flexible Supply<br>Formats</span></li>
+          <li><span class="trust-icon trust-hand" aria-hidden="true">♧</span><span>Long-Term Trade<br>Relationships</span></li>
+        </ul>
       </div>
+      <div class="hero-visual">
+        <img src="assets/hero.jpg" alt="Sacks of rice, pulses, wheat and other agro commodities">
+      </div>
+    </section>
 
-      <span class="anchor" id="home"></span>
-      <span class="anchor" id="categories"></span>
-      <span class="anchor" id="packaging"></span>
-      <span class="anchor" id="sourcing"></span>
-      <span class="anchor" id="markets"></span>
-      <span class="anchor" id="contact"></span>
-      <span class="anchor" id="about"></span>
+    <section class="product-range section-inner" id="categories" aria-labelledby="categories-title">
+      <div class="section-heading product-heading">
+        <div><p class="eyebrow">Our Product Range</p><h2 id="categories-title">Across Grains, Pulses, and Staple Commodities.</h2></div>
+        <p class="section-intro">From everyday essentials to specialty grains, Millicent Exim offers a diverse range of high-quality agro commodities to meet global market needs.</p>
+        <a class="text-link category-link" href="#categories">Explore All Categories <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><img src="assets/rice.jpg" alt="Rice grains"><h3>Rice</h3><p>Basmati, Non-Basmati<br>and other varieties.</p></article>
+        <article class="product-card"><img src="assets/wheat.jpg" alt="Wheat grains"><h3>Wheat</h3><p>Premium quality<br>milling wheat.</p></article>
+        <article class="product-card"><img src="assets/pulses.jpg" alt="Pulses"><h3>Pulses</h3><p>Chickpeas, peas, beans<br>and more.</p></article>
+        <article class="product-card"><img src="assets/lentils.jpg" alt="Red lentils"><h3>Lentils</h3><p>Red, yellow, green and<br>other lentil varieties.</p></article>
+        <article class="product-card"><img src="assets/specialty.jpg" alt="Specialty staple grains"><h3>Specialty Staples</h3><p>Millets, barley, maize<br>and more.</p></article>
+      </div>
+    </section>
 
-      <a class="hotspot nav-home" href="#home" aria-label="Home"></a>
-      <a class="hotspot nav-cat" href="#categories" aria-label="Categories"></a>
-      <a class="hotspot nav-pack" href="#packaging" aria-label="Packaging"></a>
-      <a class="hotspot nav-source" href="#sourcing" aria-label="Sourcing"></a>
-      <a class="hotspot nav-markets" href="#markets" aria-label="Markets"></a>
-      <a class="hotspot nav-about" href="#about" aria-label="About"></a>
-      <a class="hotspot nav-contact" href="#contact" aria-label="Contact"></a>
-      <a class="hotspot top-cta" href="#contact" aria-label="Get in touch"></a>
-      <a class="hotspot hero-cat" href="#categories" aria-label="View categories"></a>
-      <a class="hotspot hero-partner" href="#contact" aria-label="Partner with us"></a>
-      <a class="hotspot cat-link" href="#categories" aria-label="Explore all categories"></a>
-      <a class="hotspot pack-link" href="#packaging" aria-label="Explore packaging options"></a>
-      <a class="hotspot final-link" href="mailto:sales@millicentexim.com" aria-label="Start a conversation"></a>
+    <section class="packaging" id="packaging" aria-labelledby="packaging-title">
+      <div class="packaging-inner">
+        <div class="packaging-copy">
+          <p class="eyebrow">Our Packaging <span class="eyebrow-rule" aria-hidden="true"></span></p>
+          <h2 id="packaging-title">Formats Designed for Retail, Trade, and Bulk.</h2>
+          <p>Flexible and reliable packaging solutions for every buyer segment, from retail packs to bulk shipments.</p>
+          <a class="button button-gold" href="#contact">Explore Packaging Options <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="packaging-grid">
+          <article class="pack-item"><img src="assets/pack-rice.png" alt="Millicent rice retail pack"><h3>Retail Packs</h3><p>(1 kg)</p></article>
+          <article class="pack-item"><img src="assets/pack-wheat.png" alt="Millicent wheat family pack"><h3>Family Packs</h3><p>(5 kg)</p></article>
+          <article class="pack-item"><img src="assets/pack-chana.png" alt="Millicent trade pack"><h3>Trade Packs</h3><p>(10 kg)</p></article>
+          <article class="pack-item"><img src="assets/pack-lentils.png" alt="Millicent export sack"><h3>Export Sacks</h3><p>(25 - 50 kg)</p></article>
+          <article class="pack-item"><img src="assets/pack-private.png" alt="Millicent custom private label packaging"><h3>Bulk / Private Label</h3><p>(Customised Solutions)</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sourcing" id="sourcing" aria-labelledby="sourcing-title">
+      <div class="sourcing-visual"><img src="assets/sourcing.jpg" alt="Hands holding grain, from Indian farms to global opportunities"></div>
+      <div class="sourcing-content">
+        <p class="eyebrow">Our Sourcing &amp; Quality</p>
+        <h2 id="sourcing-title">Origin Transparency, Quality You Can Verify.</h2>
+        <p class="sourcing-intro">We work closely with Indian farmers and trusted suppliers to ensure authentic origins, consistent quality, and reliable supply.</p>
+        <ul class="quality-grid">
+          <li><span class="quality-icon" aria-hidden="true">♧</span><strong>Direct Procurement</strong><span>Sourced from trusted<br>farming regions.</span></li>
+          <li><span class="quality-icon" aria-hidden="true">♢</span><strong>Multi-Stage Checks</strong><span>Quality control at<br>every stage.</span></li>
+          <li><span class="quality-icon" aria-hidden="true">▤</span><strong>Export Documentation</strong><span>Compliant and<br>hassle-free.</span></li>
+          <li><span class="quality-icon people-icon" aria-hidden="true">♙</span><strong>Consistent Fulfilment</strong><span>Reliable supply<br>for long-term growth.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="markets section-inner" id="markets" aria-labelledby="markets-title">
+      <div class="markets-copy">
+        <p class="eyebrow">Our Markets <span class="eyebrow-rule" aria-hidden="true"></span></p>
+        <h2 id="markets-title">Connecting Indian Supply to Global Demand.</h2>
+        <p>We serve importers, distributors, and institutional buyers across key international markets with reliable supply and consistent quality.</p>
+        <ul class="market-stats">
+          <li><strong>50+</strong><span>Countries</span></li>
+          <li><strong>100+</strong><span>Buyers</span></li>
+          <li><strong>Long-Term</strong><span>Partnerships</span></li>
+        </ul>
+      </div>
+      <img class="market-map" src="assets/market-map-corrected.png" alt="World map showing trade routes from India to North America, Europe, the Middle East, Africa, Asia and Australia">
+      <p class="market-note">Indian<br>Agro Commodities.<br>Global Markets.<br>Shared Growth.<span class="note-rule" aria-hidden="true"></span></p>
+    </section>
+
+    <section class="final-cta" id="contact" aria-labelledby="contact-title">
+      <div class="cta-inner">
+        <p class="eyebrow">Partner for a Brighter Tomorrow</p>
+        <h2 id="contact-title">Let’s Build Stronger Supply Chains Together.</h2>
+        <p>Share your sourcing needs, packaging preference, and buyer requirements with our team.<br>We’re here to create long-term value, together.</p>
+        <a class="button button-gold" href="mailto:sales@millicentexim.com">Start a Conversation <span aria-hidden="true">→</span></a>
+        <p class="audience">Importers&nbsp; | &nbsp;Distributors&nbsp; | &nbsp;Private Label Buyers</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-main">
+      <a class="footer-brand" href="#home" aria-label="Millicent Exim home"><img src="assets/logo.png" alt="Millicent Exim — Exporting Excellence, Worldwide!"></a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#home">Home</a><a href="#categories">Categories</a><a href="#packaging">Packaging</a>
+        <a href="#sourcing">Sourcing</a><a href="#markets">Markets</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="social-marks" aria-label="Social media"><span aria-hidden="true">in</span><span aria-hidden="true">◎</span><span aria-hidden="true">▶</span></div>
+      <p class="footer-tagline">Indian Agro Commodities.<br>Trusted Worldwide.</p>
     </div>
-  </div>
-
-  <div class="mobile-site">
-    <header class="m-header" id="mHeader">
-      <div class="m-wrap m-nav">
-        <a href="#m-home" class="m-brand" aria-label="Millicent Exim home"><img src="assets/logo.png" alt="Millicent Exim"></a>
-        <button class="m-menu" id="mMenu" aria-expanded="false" aria-controls="mDrawer" aria-label="Open menu"><span></span></button>
-        <nav class="m-drawer" id="mDrawer" aria-label="Mobile navigation">
-          <a href="#m-home">Home</a><a href="#m-categories">Categories</a><a href="#m-packaging">Packaging</a><a href="#m-sourcing">Sourcing</a><a href="#m-markets">Markets</a><a href="#m-contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="m-hero" id="m-home">
-        <div class="m-wrap">
-          <div class="m-kicker">Premium Indian Agro Commodities<br>For a Brighter Tomorrow</div>
-          <h1 class="m-h1">India’s Agro Commodities, Supplied with Trust.</h1>
-          <p class="m-copy">Millicent Exim supplies rice, wheat, pulses, lentils, and staple agro commodities to global buyers with a commitment to quality, reliability, and long-term partnerships.</p>
-          <div class="m-btns"><a class="m-btn gold" href="#m-categories">View Categories →</a><a class="m-btn light" href="#m-contact">Partner With Us</a></div>
-          <div class="m-trust"><div><i>◇</i><span>Multi-Commodity Export</span></div><div><i>□</i><span>Flexible Supply Formats</span></div><div><i>↔</i><span>Long-Term Trade Relationships</span></div></div>
-        </div>
-        <div class="m-hero-photo"><img src="assets/hero.jpg" alt="Rice, wheat, pulses and staple agro commodities"></div>
-      </section>
-
-      <section class="m-section" id="m-categories">
-        <div class="m-wrap">
-          <div class="m-kicker">Our Product Range</div>
-          <h2 class="m-h2">Across Grains, Pulses, and Staple Commodities.</h2>
-          <p class="m-copy">From everyday essentials to specialty grains, Millicent Exim offers a diverse range of high-quality agro commodities to meet global market needs.</p>
-          <div class="m-cats">
-            <article class="m-card"><img src="assets/rice.jpg" alt="Rice"><div class="body"><h3 class="m-h3">Rice</h3><p>Basmati, Non-Basmati and other varieties.</p></div></article>
-            <article class="m-card"><img src="assets/wheat.jpg" alt="Wheat"><div class="body"><h3 class="m-h3">Wheat</h3><p>Premium quality milling wheat.</p></div></article>
-            <article class="m-card"><img src="assets/pulses.jpg" alt="Pulses"><div class="body"><h3 class="m-h3">Pulses</h3><p>Chickpeas, peas, beans and more.</p></div></article>
-            <article class="m-card"><img src="assets/lentils.jpg" alt="Lentils"><div class="body"><h3 class="m-h3">Lentils</h3><p>Red, yellow, green and other lentil varieties.</p></div></article>
-            <article class="m-card"><img src="assets/specialty.jpg" alt="Specialty staples"><div class="body"><h3 class="m-h3">Specialty Staples</h3><p>Millets, barley, maize and more.</p></div></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="m-section m-pack" id="m-packaging">
-        <div class="m-wrap">
-          <div class="m-kicker">Our Packaging</div>
-          <h2 class="m-h2">Formats Designed for Retail, Trade, and Bulk.</h2>
-          <p class="m-copy">Flexible and reliable packaging solutions for every buyer segment, from retail packs to bulk shipments.</p>
-          <a class="m-btn" href="#m-contact">Explore Packaging Options →</a>
-        </div>
-        <div class="m-pack-row">
-          <div class="m-pack-item"><img src="assets/pack-rice.png" alt="Retail pack"><strong>Retail Packs</strong><small>1 kg</small></div>
-          <div class="m-pack-item"><img src="assets/pack-wheat.png" alt="Family pack"><strong>Family Packs</strong><small>5 kg</small></div>
-          <div class="m-pack-item"><img src="assets/pack-chana.png" alt="Trade pack"><strong>Trade Packs</strong><small>10 kg</small></div>
-          <div class="m-pack-item"><img src="assets/pack-lentils.png" alt="Export sack"><strong>Export Sacks</strong><small>25–50 kg</small></div>
-          <div class="m-pack-item"><img src="assets/pack-private.png" alt="Private label"><strong>Bulk / Private Label</strong><small>Customized Solutions</small></div>
-        </div>
-      </section>
-
-      <section class="m-section" id="m-sourcing">
-        <div class="m-source-photo"><img src="assets/sourcing.jpg" alt="Hands holding grain in a farm"><div class="m-source-note">From<br>Indian Farms<br>to Global<br>Opportunities</div></div>
-        <div class="m-wrap">
-          <div class="m-kicker">Our Sourcing &amp; Quality</div>
-          <h2 class="m-h2">Origin Transparency. Quality You Can Verify.</h2>
-          <p class="m-copy">We work closely with Indian farmers and trusted suppliers to ensure authentic origins, consistent quality, and reliable supply.</p>
-          <div class="m-pillars">
-            <div class="m-pillar"><i>◇</i><div><strong>Direct Procurement</strong><p>Sourced from trusted farming regions.</p></div></div>
-            <div class="m-pillar"><i>✓</i><div><strong>Multi-Stage Checks</strong><p>Quality control at every stage.</p></div></div>
-            <div class="m-pillar"><i>▤</i><div><strong>Export Documentation</strong><p>Compliant and hassle-free.</p></div></div>
-            <div class="m-pillar"><i>◎</i><div><strong>Consistent Fulfilment</strong><p>Reliable supply for long-term growth.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="m-section m-markets" id="m-markets">
-        <div class="m-wrap">
-          <div class="m-kicker">Our Markets</div>
-          <h2 class="m-h2">Connecting Indian Supply to Global Demand.</h2>
-          <p class="m-copy">We serve importers, distributors, and institutional buyers across key international markets with reliable supply and consistent quality.</p>
-          <div class="m-stats"><div class="m-stat"><b>50+</b><span>Countries</span></div><div class="m-stat"><b>100+</b><span>Buyers</span></div><div class="m-stat"><b>Long-Term</b><span>Partnerships</span></div></div>
-          <div class="m-map"><img src="assets/market-map-corrected.png" alt="Corrected global markets map showing India in its proper location"></div>
-        </div>
-      </section>
-
-      <section class="m-cta" id="m-contact">
-        <div class="m-wrap">
-          <div class="m-kicker">Partner for a Brighter Tomorrow</div>
-          <h2 class="m-h2">Let’s Build Stronger Supply Chains Together.</h2>
-          <p class="m-copy">Share your sourcing needs, packaging preference, and buyer requirements with our team. We’re here to create long-term value, together.</p>
-          <div class="m-btns"><a class="m-btn gold" href="mailto:sales@millicentexim.com">Start a Conversation →</a></div>
-          <div class="m-audience">Importers&nbsp; | &nbsp;Distributors&nbsp; | &nbsp;Private Label Buyers</div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="m-footer">
-      <div class="m-wrap">
-        <img class="m-footer-logo" src="assets/logo.png" alt="Millicent Exim">
-        <nav class="m-footer-links"><a href="#m-home">Home</a><a href="#m-categories">Categories</a><a href="#m-packaging">Packaging</a><a href="#m-sourcing">Sourcing</a><a href="#m-markets">Markets</a><a href="#m-contact">Contact</a></nav>
-        <div class="m-footer-bottom">© 2026 Millicent Exim. All rights reserved.<br>Indian Agro Commodities. Trusted Worldwide.</div>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    const mh=document.getElementById('mHeader');
-    const mb=document.getElementById('mMenu');
-    if(mh&&mb){
-      mb.addEventListener('click',()=>{const open=mh.classList.toggle('open');mb.setAttribute('aria-expanded',String(open));mb.setAttribute('aria-label',open?'Close menu':'Open menu')});
-      document.querySelectorAll('.m-drawer a').forEach(a=>a.addEventListener('click',()=>{mh.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.setAttribute('aria-label','Open menu')}));
-    }
-  </script>
+    <div class="footer-bottom">
+      <p id="about">© 2024 Millicent Exim. All rights reserved.</p>
+      <nav aria-label="Legal navigation"><a href="#about">Privacy Policy</a><a href="#about">Terms</a><a href="#site-footer">Sitemap</a></nav>
+    </div>
+  </footer>
 </body>
 </html>
