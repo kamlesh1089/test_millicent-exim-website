@@ -213,7 +213,7 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
   .trust-icon { width: 24px; height: 24px; flex-basis: 24px; }
   .hero-visual { position: relative; inset: auto; width: 100%; height: auto; margin-top: 18px; overflow: hidden; }
   .hero-visual::after { display: none; }
-  .hero-visual img { width: 100%; height: auto; aspect-ratio: 1.28 / 1; object-fit: cover; object-position: right center; }
+  .hero-visual img { width: 100%; height: auto; aspect-ratio: 1.28 / 1; object-fit: cover; object-position: right center; transform: scaleX(1.12); transform-origin: right center; }
 
   .product-range { min-height: 0; padding-block: 37px 32px; }
   .section-heading { display: block; }
