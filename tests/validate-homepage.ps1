@@ -18,6 +18,14 @@ Assert-NotContains 'class="hotspot' 'Transparent screenshot click zones must be 
 Assert-Contains 'assets/market-map-corrected.png' 'Corrected India map asset is not used.'
 Assert-Contains 'id="mobile-menu"' 'Missing mobile menu control.'
 Assert-Contains 'aria-expanded="false"' 'Mobile menu must expose its initial state.'
+Assert-Contains 'assets/main.js' 'Mobile behavior script is not loaded.'
+Assert-Contains 'id="mobile-nav"' 'Mobile navigation landmark is missing.'
+
+$scriptPath = Join-Path $root 'assets/main.js'
+if (-not (Test-Path -LiteralPath $scriptPath)) { throw 'Mobile behavior script file is missing.' }
+$script = Get-Content -Raw $scriptPath
+if ($script -notmatch [regex]::Escape('menuButton.addEventListener')) { throw 'Mobile menu click behavior is missing.' }
+if ($script -notmatch [regex]::Escape("event.key === 'Escape'")) { throw 'Mobile menu Escape behavior is missing.' }
 
 $requiredIds = @('home','categories','packaging','sourcing','markets','about','contact')
 foreach ($id in $requiredIds) {
