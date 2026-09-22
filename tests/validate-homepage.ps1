@@ -13,6 +13,7 @@ function Assert-NotContains([string]$pattern, [string]$message) {
 Assert-Contains '<header id="site-header"' 'Missing semantic site header.'
 Assert-Contains '<main id="main-content"' 'Missing main content landmark.'
 Assert-Contains '<footer id="site-footer"' 'Missing semantic site footer.'
+Assert-Contains 'Commodities,<br> Supplied with Trust.' 'Hero title must preserve word spacing when the desktop line break is hidden on mobile.'
 Assert-NotContains 'src="assets/reference.png"' 'Desktop must not render the reference screenshot.'
 Assert-NotContains 'class="hotspot' 'Transparent screenshot click zones must be removed.'
 Assert-Contains 'assets/market-map-corrected.png' 'Corrected India map asset is not used.'
